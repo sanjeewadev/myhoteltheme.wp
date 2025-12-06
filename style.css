@@ -153,6 +153,33 @@ h4 {
   justify-content: center;
   text-align: center;
   color: var(--text-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* 40% dark tint */
+    z-index: 0; /* Sit on top of video (-1), but behind text (1) */
+}
+
+.hero-content {
+  position: absolute;
+  z-index: 1;
 }
 
 .hero h4 {

@@ -10,7 +10,7 @@
       <!-- Navigation -->
     <nav class="navbar" id="navbar">
       <div class="container nav-container">
-        <a href="index.html" class="logo">LUMIÈRE</a>
+        <a href="<?php echo home_url(); ?>" class="logo">LUMIÈRE</a>
         <?php wp_nav_menu( array(
             'theme_location' => 'primary_menu',
             'menu_class'     => 'nav-links',
