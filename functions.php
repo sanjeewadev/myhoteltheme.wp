@@ -68,3 +68,45 @@ function mytheme_register_room_types() {
 }
 
 add_action( 'init', 'mytheme_register_room_types' );
+
+// //////////////// SPA ///////////////////////
+
+// Register a Custom Post Type for spa services
+function mytheme_register_spa_services() {
+    $args = array(
+        'labels' => array(
+            'name'          => 'Spa Services',           // The main name in the menu
+            'singular_name' => 'Spa Service',            // The name for a single item
+            'add_new_item'  => 'Add New Spa Services',    // The button text
+            'edit_item'     => 'Edit Spa Services',       // Text when editing
+        ),
+        'public'      => true,       // Can people see this on the website? Yes.
+        'has_archive' => true,       // Do we want a page that lists ALL suites? Yes.
+        'menu_icon'   => 'dashicons-heart', // The little icon in the sidebar
+        'supports'    => array( 'title', 'editor', 'thumbnail' ), // What features do we need?
+    );
+    
+    register_post_type( 'spa_services', $args ); // The actual command to create it
+    add_theme_support( 'post-thumbnails' );
+}
+
+// Hook into WordPress initialization
+add_action( 'init', 'mytheme_register_spa_services' );
+
+// Register a "Room Type" Taxonomy for Suites
+function mytheme_register_spa_services_types() {
+    $args = array(
+        'labels' => array(
+            'name' => 'Spa Services Types',         // The menu name
+            'singular_name' => 'Spa Service Type', // Single name
+        ),
+        'public' => true,
+        'hierarchical' => true, // TRUE = Like Categories (checkboxes). FALSE = Like Tags (typing).
+        'show_admin_column' => true, // Show this column in the "All Suites" list
+    );
+
+    // The Command: Create "room_type", attach it to "suite", use $args
+    register_taxonomy( 'spa_services_types', array( 'spa_services' ), $args );
+}
+
+add_action( 'init', 'mytheme_register_spa_services_types' );

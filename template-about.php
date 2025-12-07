@@ -8,22 +8,6 @@ get_header( );
 
 ?>
 
-<!-- Page Header -->
-    <header
-      class="page-header"
-      style="
-        background-image: linear-gradient(
-            rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.5)
-          ),
-          url('<?php the_field('about_header_image'); ?>');
-      ">
-      <div class="header-content fade-in">
-        <h1><?php the_field('about_header_title'); ?></h1>
-        <p><?php the_field('about_header_description'); ?> </p>
-      </div>
-    </header>
-
     <!-- Vision Section -->
     <section class="section-padding">
       <div class="container about-grid">

@@ -23,3 +23,21 @@
         </div>
       </div>
     </nav>
+
+
+    <?php if (! is_front_page(  )){ ?>
+    <header
+      class="page-header"
+      style="
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+          ),
+          url('<?php the_field('hero_image') ?>');
+      ">
+      <div class="header-content fade-in">
+        <h1><?php the_field('hero_title') ?></h1>
+        <p><?php the_field('hero_sub_title') ?></p>
+      </div>
+    </header>
+    <?php } ?>
