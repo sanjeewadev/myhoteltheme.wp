@@ -41,32 +41,7 @@ get_header( );
         <!-- Contact Form -->
         <div class="booking-details-form">
           <!-- reusing form style -->
-          <form id="contactForm">
-            <div class="input-group">
-              <label>Name</label>
-              <input type="text" required />
-            </div>
-            <div class="input-group">
-              <label>Email</label>
-              <input type="email" required />
-            </div>
-            <div class="input-group">
-              <label>Message</label>
-              <textarea
-                rows="5"
-                style="
-                  width: 100%;
-                  padding: 10px;
-                  border: 1px solid #ddd;
-                "></textarea>
-            </div>
-            <button
-              type="submit"
-              class="btn btn-primary"
-              style="margin-top: 20px">
-              Send Message
-            </button>
-          </form>
+            <?php echo do_shortcode( '[contact-form-7 id="e9218eb" title="Contact Form"]' ); ?>
         </div>
       </div>
     </section>

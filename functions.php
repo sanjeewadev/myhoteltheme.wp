@@ -110,3 +110,24 @@ function mytheme_register_spa_services_types() {
 }
 
 add_action( 'init', 'mytheme_register_spa_services_types' );
+
+
+// Register the Global Options Page
+function mytheme_register_options_page() {
+    
+    // Check if ACF is active so the site doesn't break if plugin is disabled
+    if ( function_exists('acf_add_options_page') ) {
+        
+        acf_add_options_page(array(
+            'page_title'    => 'Theme General Settings', // Title on the page
+            'menu_title'    => 'Theme Settings',         // Title in the sidebar
+            'menu_slug'     => 'theme-general-settings', // URL slug
+            'capability'    => 'edit_posts',
+            'redirect'      => false,                    // Do not redirect to sub-page
+            'icon_url'      => 'dashicons-admin-generic', // The "Gear" icon
+            'position'      => 2                         // Show it near Dashboard
+        ));
+        
+    }
+}
+add_action('acf/init', 'mytheme_register_options_page');
